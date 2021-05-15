@@ -64,3 +64,43 @@ class Person {
   }
 
 }
+//Timmy is born
+const timmy = new Person('Timmy')
+
+console.log(timmy)
+
+//function for timmy's age up to go up year by year
+// function king(num) {
+//   for (let i = 0; i < num; i++) {
+//     timmy.ageUp()
+//   }
+// }
+
+//calling timmy's age up function
+
+timmy.ageUp(5)
+console.log(timmy)
+
+timmy.eat(5)
+console.log(timmy)
+
+timmy.exercise(5)
+console.log(timmy)
+
+timmy.ageUp(9)
+console.log(timmy)
+
+const gus = new Hamster('Gus')
+console.log(gus)
+
+timmy.buyHamster(gus)
+console.log(timmy)
+
+timmy.ageUp(15)
+console.log(timmy)
+
+timmy.eat(2)
+console.log(timmy)
+
+timmy.exercise(2)
+console.log(timmy)
