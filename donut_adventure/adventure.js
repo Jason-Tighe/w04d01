@@ -9,7 +9,7 @@ class Hero {
     this.catchPhrase = ["I'm fresher than a day old pizza", "you can't count my calories"]
   }
   talkSass(){
-    console.log(this.catchPhrase[Math.floor(Math.random() * this.catchPhrase.length))
+    console.log(this.catchPhrase[Math.floor(Math.random() * this.catchPhrase.length)])
   }
   announceHealth() {
     console.log(this.name + " has " + this.health + "HP remaining.")
@@ -49,7 +49,7 @@ class Enemy {
     this.catchPhrase = ["I'm youtube Famous", "I'm more dangerous than an uncovered sewer"]
   }
   talkSass(){
-    console.log(this.catchPhrase[Math.floor(Math.random() * this.catchPhrase.length))
+    console.log(this.catchPhrase[Math.floor(Math.random() * this.catchPhrase.length)])
   }
   announceHealth() {
     console.log(this.name + " has " + this.health + "HP remaining.")
@@ -77,24 +77,24 @@ class Enemy {
   }
 }
 
-const ratBoi = new Enemy ('Pizza Rat')
+const zaRat = new Enemy ('Pizza Rat')
 
 
 //story time
 
 //Dougie walks up to a rat.
-dougie.catchPhrase();
+dougie.talkSass();
 //Pizza Rat turns
-ratBoi.catchPhrase();
+zaRat.talkSass();
 //Dougie shows off this cool health
 dougie.announceHealth();
 //Pizza Rat slaps his chest
-ratBoi.announceHealth();
+zaRat.announceHealth();
 //attacks are randomly generated betweena  normal and a specialAttk
 //PizzaRat attacks Dougie the Donut
-ratBoi.fight(dougie);
+zaRat.fight(dougie);
 //Dougie fights back!
-dougie.fight(ratboi);
+dougie.fight(zaRat);
 //announcing the health should be included with the fight function, but to be safe i'll just call it here aswell.
-ratBoi.announceHealth();
+zaRat.announceHealth();
 dougie.announceHealth();
