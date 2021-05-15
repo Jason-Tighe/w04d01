@@ -11,11 +11,29 @@ class Hero {
   talkSass(){
     console.log(this.catchPhrase[Math.floor(Math.random() * this.catchPhrase.length))
   }
-  announceHealth(){
-    console.log(this.health)
+  announceHealth() {
+    console.log(this.name + " has " + this.health + "HP remaining.")
   }
-  fight(){
-    console.log("I'm ready to rumble")
+  style() {
+    return (Math.floor(Math.random() * 2))
+  }
+  fight(name) {
+    if (this.style() == 1) {
+      this.normalAttk(name)
+    } else {
+      this.specialAttk(name)
+    }
+  }
+  normalAttk(name) {
+
+    const newHealth = name.health -= this.weapons.sugarShock
+
+
+    console.log(this.name + " used Sugar Shock! That was strong! They only have " + newHealth + "HP left!")
+  }
+  specialAttk(name) {
+    const newHealth = name.health -= this.weapons.sprinkleSpray
+     console.log(this.name + " used sprinkleSpray! Nice hit! They only have " + newHealth + "HP left!")
   }
 }
 
@@ -33,12 +51,50 @@ class Enemy {
   talkSass(){
     console.log(this.catchPhrase[Math.floor(Math.random() * this.catchPhrase.length))
   }
-  announceHealth(){
-    console.log(this.health)
+  announceHealth() {
+    console.log(this.name + " has " + this.health + "HP remaining.")
   }
-  fight(){
-    console.log("I'm gonna flatten you like a slice of pepperoni!")
+  style() {
+    return (Math.floor(Math.random() * 2))
+  }
+  fight(name) {
+    if (this.style() == 1) {
+      this.normalAttk(name)
+    } else {
+      this.specialAttk(name)
+    }
+  }
+  normalAttk(name) {
+
+    const newHealth = name.health -= this.weapons.cheeseGrease
+
+
+    console.log(this.name + " used Cheese Grease! That was strong! They only have " + newHealth + "HP left!")
+  }
+  specialAttk(name) {
+    const newHealth = name.health -= this.weapons.pepperoniStars
+     console.log(this.name + " used Pepperoni Stars! Nice hit! They only have " + newHealth + "HP left!")
   }
 }
 
 const ratBoi = new Enemy ('Pizza Rat')
+
+
+//story time
+
+//Dougie walks up to a rat.
+dougie.catchPhrase();
+//Pizza Rat turns
+ratBoi.catchPhrase();
+//Dougie shows off this cool health
+dougie.announceHealth();
+//Pizza Rat slaps his chest
+ratBoi.announceHealth();
+//attacks are randomly generated betweena  normal and a specialAttk
+//PizzaRat attacks Dougie the Donut
+ratBoi.fight(dougie);
+//Dougie fights back!
+dougie.fight(ratboi);
+//announcing the health should be included with the fight function, but to be safe i'll just call it here aswell.
+ratBoi.announceHealth();
+dougie.announceHealth();
